@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Poppins";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: #f5eddc;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 80px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* * mains */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  width: 100vw;
+  padding: 0 80px;
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  color: #1b1e74;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.main-item {
+  width: 50%;
+}
+
+.main h2 {
+  border-left: 4px solid #1b1e74;
+  padding-left: 10px;
+}
+
+.todo-item {
+  width: 80%;
+  padding: 30px 20px;
+  border-radius: 8px;
+  background: #ffffff;
+  margin-top: 25px;
+  font-size: 20px;
+  box-shadow: 3px 4px 17px #1b1e7447;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  animation: todoKeyframe 0.8s ease-in-out 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes todoKeyframe {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-200px);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0px);
+  }
+}
+
+.todo-item.checked p {
+  text-decoration: 2px line-through #da1244;
+}
+
+.todo-item .updatedAt {
+  font-size: 16px;
+  color: cadetblue;
+  opacity: 0.7;
+}
+
+.todo-item .remove {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: #f5eddc;
+  position: absolute;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #da1244;
+  opacity: 0.3;
+}
+
+/* ##  form Area  */
+
+.form {
+  margin-top: 25px;
+}
+
+.form .form-control {
+  padding: 20px;
+  border: none;
+  display: block;
+  outline: none;
+  border-radius: 8px;
+  width: 80%;
+}
+
+.btn {
+  width: 80%;
+  padding: 15px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  background: #1b1e74;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* ## responsive */
+@media only screen and (max-device-width: 480px) {
+  body {
+    min-height: 150vh;
+  }
+  .main {
+    flex-direction: column-reverse;
+    padding: 0 40px;
+  }
+  .main .section {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .todo-item {
+    width: 100%;
+  }
+
+  .form .form-control {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
   }
 }

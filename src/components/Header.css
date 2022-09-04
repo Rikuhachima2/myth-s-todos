@@ -1,0 +1,19 @@
+header {
+  min-height: 80px;
+  background: #1b1e74;
+  margin-bottom: 40px;
+  border-radius: 0 0 10px 10px;
+}
+
+.container {
+  width: fit-content;
+  padding: 50px 0;
+  margin: 0 auto;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5eddc;
+}
+
+.container h1 {
+  text-decoration: 2px underline #f5eddc;
+}
