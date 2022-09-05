@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/react";
 import { createContext, useReducer } from "react";
 
 export const TodoContext = createContext();
